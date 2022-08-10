@@ -7,19 +7,34 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='UrlsToMonitor',
+            name="UrlsToMonitor",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url', models.URLField(max_length=300)),
-                ('status', models.CharField(blank=True, choices=[('0', 'inactive'), ('1', 'active')], max_length=1, null=True)),
-                ('check_needed', models.BooleanField(default=True)),
-                ('created_date', models.DateTimeField(auto_now_add=True)),
-                ('last_checked', models.DateTimeField(auto_now=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("url", models.URLField(max_length=300)),
+                (
+                    "status",
+                    models.CharField(
+                        blank=True,
+                        choices=[("0", "inactive"), ("1", "active")],
+                        max_length=1,
+                        null=True,
+                    ),
+                ),
+                ("check_needed", models.BooleanField(default=True)),
+                ("created_date", models.DateTimeField(auto_now_add=True)),
+                ("last_checked", models.DateTimeField(auto_now=True)),
             ],
         ),
     ]

@@ -8,5 +8,4 @@ urlpatterns = [
     path("logout/", LogoutView.as_view(), name="logout_view"),
     path("login/", LoginView.as_view(), name="login_view"),
     path("ajax/get_urls/", UrlsView.as_view(), name="urls_view"),
-    path("check", check_urls, name="check"),
 ]

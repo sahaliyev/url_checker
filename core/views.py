@@ -14,18 +14,6 @@ import requests
 import pdb
 
 
-def check_urls(request):
-    urls = UrlsToMonitor.objects.filter(check_needed=True)
-    for item in urls:
-        url = item.url
-        response = requests.get(url)
-        if response.status_code == 200:
-            item.status = 1
-        else:
-            item.status = 0
-        item.save()
-
-
 class LogoutView(View):
     def get(self, request):
         logout(request)
