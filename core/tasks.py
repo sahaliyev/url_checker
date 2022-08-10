@@ -1,10 +1,7 @@
 from celery.utils.log import get_task_logger
 from celery import shared_task
-from django.core.exceptions import ObjectDoesNotExist
-import pytz
 from .models import UrlsToMonitor
 import requests
-import datetime as dt
 from django_celery_beat.models import PeriodicTask, IntervalSchedule
 
 logger = get_task_logger(__name__)

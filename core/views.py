@@ -1,4 +1,3 @@
-from dataclasses import fields
 from django.shortcuts import render, redirect
 from django.views import View
 
@@ -7,11 +6,9 @@ from .forms import UserRegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from django.core import serializers
 from django.contrib.auth.mixins import LoginRequiredMixin
-import requests
-import pdb
 
 
 class LogoutView(View):
@@ -50,7 +47,6 @@ class LoginView(View):
         return render(request, "login.html")
 
     def post(self, request):
-        # pdb.set_trace()
         data = request.POST
         username = data.get("username")
         password = data.get("password")
